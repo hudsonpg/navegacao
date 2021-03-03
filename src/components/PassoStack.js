@@ -3,7 +3,18 @@ import { View, Button } from 'react-native'
 
 export default props => (
     <View style={{ flex: 1 }}>
-        <View>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+            {props.voltar
+                ?
+                <Button
+                    title='Voltar'
+                    onPress={() => {
+                        props.navigation.goBack()
+                    }}
+                />
+                :
+                false
+            }
             {props.avancar
                 ?
                 <Button
