@@ -13,14 +13,23 @@ export default () => (
             tabBarIcon: ({ focused, color, size }) => {
                 let iconName;
 
-                if (route.name === 'TelaA') {
-                    iconName = focused
-                        ? 'information-circle-outline'
-                        : 'information-outline';
-                } else if (route.name === 'TelaB') {
-                    iconName = focused ? 'pause-circle-outline' : 'pause-outline';
-                } else if (route.name === 'TelaC') {
-                    iconName = focused ? 'pause-circle-outline' : 'pause-outline';
+                switch (route.name) {
+                    case 'TelaA':
+                        iconName = focused
+                            ? 'information-circle-outline'
+                            : 'information-outline';
+                        break;
+                    case 'TelaB':
+                        iconName = focused
+                            ? 'information-circle-outline'
+                            : 'information-outline';
+                        break;
+                    case 'TelaC':
+                        iconName = focused ? 'pause-circle-outline' : 'pause-outline';
+                        break;
+
+                    default:
+                        break;
                 }
 
                 return <Ionicons name={iconName} size={size} color={color} />;
@@ -29,11 +38,12 @@ export default () => (
         tabBarOptions={{
             activeTintColor: 'tomato',
             inactiveTintColor: 'gray',
-            // labelStyle: { fontSize: 30, fontWeight: 'bold' },
+            showLabel: true,
+            labelStyle: { fontSize: 15 },
         }} initialRouteName="TelaB"
     >
-        <Tab.Screen name='TelaA' component={TelaA} />
-        <Tab.Screen name='TelaB' component={TelaB} />
-        <Tab.Screen name='TelaC' component={TelaC} />
+        <Tab.Screen name='TelaA' component={TelaA} options={{ title: "Inicial" }} />
+        <Tab.Screen name='TelaB' component={TelaB} options={{ title: "Meio" }} />
+        <Tab.Screen name='TelaC' component={TelaC} options={{ title: "Final" }} />
     </Tab.Navigator>
 )
