@@ -16,16 +16,18 @@ export default () => (
                 switch (route.name) {
                     case 'TelaA':
                         iconName = focused
-                            ? 'information-circle-outline'
-                            : 'information-outline';
+                            ? 'logo-react'
+                            : 'logo-angular';
                         break;
                     case 'TelaB':
                         iconName = focused
-                            ? 'information-circle-outline'
-                            : 'information-outline';
+                            ? 'logo-chrome'
+                            : 'logo-edge';
                         break;
                     case 'TelaC':
-                        iconName = focused ? 'pause-circle-outline' : 'pause-outline';
+                        iconName = focused
+                            ? 'logo-apple'
+                            : 'logo-windows';
                         break;
 
                     default:
